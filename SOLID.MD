@@ -8,7 +8,7 @@ SOLID is a set of 5 **Object-Oriented Design Principles** that help you write **
 
 - One class = One responsibility.
 
-### ❌ Bad Example:
+### Bad Example:
 
 ```bash
 class Report:
@@ -29,9 +29,9 @@ This class does:
 
 - Send email
 
-Too many responsibilities ❌
+Too many responsibilities 
 
-### ✅ Good Example:
+### Good Example:
 
 ```bash
 class ReportGenerator:
@@ -46,7 +46,7 @@ class EmailSender:
     def send_email(self):
         pass
 ```
-✔ Each class has one responsibility.
+Each class has one responsibility.
 
 ---
 
@@ -55,7 +55,7 @@ class EmailSender:
 - Software should be **open for extension** but **closed for modification**.
 - You should be able to add new features **without changing existing code**.
 
-### ❌ Bad Example:
+### Bad Example:
 
 ```bash
 class Discount:
@@ -65,9 +65,9 @@ class Discount:
         elif customer_type == "premium":
             return 20
 ```
-If new customer type comes → modify class ❌
+If new customer type comes → modify class 
 
-### ✅ Good Example:
+### Good Example:
 
 ```bash
 class Discount:
@@ -90,7 +90,7 @@ Now we can extend without modifying original logic ✔
 
 - Child class should be able to replace parent class **without breaking the code**.
 
-### ❌ Bad Example:
+### Bad Example:
 
 ```bash
 class Bird:
@@ -101,9 +101,9 @@ class Ostrich(Bird):
     def fly(self):
         raise Exception("Ostrich can't fly")
 ```
-Ostrich cannot fly → breaks behavior ❌
+Ostrich cannot fly → breaks behavior
 
-### ✅ Good Example:
+### Good Example:
 
 ```bash
 class Bird:
@@ -114,7 +114,7 @@ class FlyingBird(Bird):
         pass
 ```
 
-Now only birds that fly inherit `FlyingBird` ✔
+Now only birds that fly inherit `FlyingBird`
 
 ---
 
@@ -123,7 +123,7 @@ Now only birds that fly inherit `FlyingBird` ✔
 - Clients should not be forced to depend on methods they don’t use.
 - Create smaller, specific interfaces instead of one large interface.
 
-### ❌ Bad Example:
+### Bad Example:
 
 ```bash
 class Worker:
@@ -134,9 +134,9 @@ class Worker:
         pass
 ```
 
-Robot doesn’t eat ❌
+Robot doesn’t eat
 
-### ✅ Better Design:
+### Better Design:
 
 ```bash
 class Workable:
@@ -148,7 +148,7 @@ class Eatable:
         pass
 ```
 
-Now classes implement only what they need ✔
+Now classes implement only what they need
 
 ---
 
@@ -158,7 +158,7 @@ Now classes implement only what they need ✔
 - Both should depend on abstractions.
 - Depend on interfaces, not concrete classes.
 
-### ❌ Bad Example:
+### Bad Example:
 
 ```bash
 class MySQLDatabase:
@@ -170,9 +170,9 @@ class Application:
         self.db = MySQLDatabase()
 ```
 
-Application tightly coupled to MySQL ❌
+Application tightly coupled to MySQL
 
-### ✅ Better Design:
+### Better Design:
 
 ```bash
 class Database:
@@ -188,11 +188,11 @@ class Application:
         self.db = db
 ```
 
-Now we can pass MySQL, PostgreSQL, etc. ✔
+Now we can pass MySQL, PostgreSQL, etc.
 
 ---
 
-## 🧠 Quick Summary Table
+## Quick Summary Table
 
 | Principle       |	Meaning                                  |
 |-----------------|------------------------------------------|
@@ -203,7 +203,7 @@ Now we can pass MySQL, PostgreSQL, etc. ✔
 | DIP             |	Depend on abstraction, not concrete      |
 
 
-## 🎯 Why SOLID is Important?
+## Why SOLID is Important?
 
 - Makes code scalable
 - Easier to test
